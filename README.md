@@ -1,6 +1,6 @@
-# qapp
+# vueApp
 
-> a app
+> app
 
 ## Build Setup
 
