@@ -1,6 +1,7 @@
 export default {
   state: {
-    count: 0
+    count: 0,
+    iconName:'fa'
   },
   mutations:{
     increment(state,n){ 

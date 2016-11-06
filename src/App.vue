@@ -1,28 +1,36 @@
 <template>
   <div id="app">
-    <nav class="topBar">top</nav>
-    <router-view></router-view>
+    <div class="wrapper">
+      <top-bar leftPath="/" title="首页"></top-bar>
+      <div class="view-container">
+        <router-view></router-view>
+      </div>
+      <tab-bar ></tab-bar>
+    </div>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
+import 'font-awesome/css/font-awesome.min.css'
+import TabBar from './components/TabBar'
+import TopBar from './components/TopBar'
 
 export default {
   name: 'app',
   components: {
-    Hello
+    TabBar,TopBar
   }
 }
 </script>
-
-<style>
+<style lang="scss">
+@import './assets/scss/layout.scss';
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  height: 100%;
 }
+
 </style>

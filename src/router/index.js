@@ -23,6 +23,13 @@ export default {
       name:'List'
     },
     {
+      path: '/more',
+        component(resolve){
+        require(['../views/more'],resolve);
+      },
+      name:'More'
+    },
+    {
       path: '/user',
         component(resolve){
         require(['../views/user'],resolve);
