@@ -1,15 +1,17 @@
 <template>
   <nav class="topBar">
     <router-link :to="leftPath" :title="title" class="topLeft">
-      <span class="icon fa fa-angle-left fa-2x">{{leftlabel}}</span>      
+      <span class="icon" v-if="leftlabel">{{leftlabel}}</span>
+      <span class="icon fa fa-angle-left fa-2x" v-else></span>
     </router-link>
     <div class="topLayout">
       <h1 class="title">
         {{ title }}
       </h1>
     </div>
-    <div class="topRight">
-      <span class="icon fa fa-plus">{{leftlabel}}</span>
+    <div class="topRight" @click="rClick" >    
+      <span v-if="rightlabel">{{rightlabel}}</span>
+      <span class="icon fa fa-plus" v-else></span>
     </div>
   </nav>   
 </template>
@@ -17,13 +19,20 @@
 export default{
   data(){
     return {
-      leftlabel:""
+      
     }
   },
   props:{
     title:'',
     leftPath:'',
-
+    leftlabel:'',
+    rightPath: '',
+    rightlabel: ''
+  },
+  methods:{
+    rClick(){
+      this.$router.push(this.rightPath);
+    }
   }
 }
 </script>
@@ -64,5 +73,6 @@ export default{
   height: 1.5rem;
   right: 0;
   top : 0;
+  font-size: 0.5rem;
 }
 </style>

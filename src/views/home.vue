@@ -1,42 +1,5 @@
 <template>
   <div class="container">
-      homes
-      <group>
-        <cell title="vue" value="cool"></cell>
-      </group>
-      <group>
-        <cell title="vue" value="cool"></cell>
-      </group>
-      <group>
-        <cell title="vue" value="cool"></cell>
-      </group>
-      <group>
-        <cell title="vue" value="cool"></cell>
-      </group>
-      <group>
-        <cell title="vue" value="cool"></cell>
-      </group>
-      <group>
-        <cell title="vue" value="cool"></cell>
-      </group>
-      <group>
-        <cell title="vue" value="cool"></cell>
-      </group>
-      <group>
-        <cell title="vue" value="cool"></cell>
-      </group>
-      <group>
-        <cell title="vue" value="cool"></cell>
-      </group>
-      <group>
-        <cell title="vue" value="cool"></cell>
-      </group>
-      <group>
-        <cell title="vue" value="cool"></cell>
-      </group>
-      <group>
-        <cell title="vue" value="cool"></cell>
-      </group>
   </div>
 </template>
 
@@ -45,11 +8,17 @@ import Group from 'vux/src/components/group'
 import Cell from 'vux/src/components/cell'
 
 export default {
+  beforeCreate(){
+    this.$store.commit('changeTop',1);
+    this.$store.commit('changeTab',1);
+  },
   components: {
     Group,
     Cell
   },
   methods: {
+    update(){
+    }
   }
 }
 </script>

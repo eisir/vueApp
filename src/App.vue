@@ -1,11 +1,17 @@
 <template>
   <div id="app">
     <div class="wrapper">
-      <top-bar leftPath="/" title="首页"></top-bar>
+      <top-bar
+      leftPath="/login"
+      title="首页"
+      leftlabel="登录"
+      rightlabel="充值"
+      rightPath="/"
+      v-if="isTop"></top-bar>
       <div class="view-container">
         <router-view></router-view>
       </div>
-      <tab-bar ></tab-bar>
+      <tab-bar v-if="isTab"></tab-bar>
     </div>
   </div>
 </template>
@@ -19,6 +25,14 @@ export default {
   name: 'app',
   components: {
     TabBar,TopBar
+  },
+  computed:{
+    isTop(){      
+      return this.$store.state.isTop;
+    },
+    isTab(){
+      return this.$store.state.isTab;
+    }
   }
 }
 </script>
@@ -31,6 +45,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   height: 100%;
+  max-width: 600px;
+  flex:1;
 }
 
 </style>
