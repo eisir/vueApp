@@ -49,6 +49,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.container{
+  text-align: center;
+}
 .close-icon{
   position: absolute;
   left: 10px;
