@@ -1,11 +1,23 @@
 <template>
-  <div class="container">
+  <div>
+    <top-bar
+      leftPath="/login"
+      title="首页"
+      leftlabel="登录"
+      rightlabel="充值"
+      rightPath="/"
+      v-if="isTop">
+    </top-bar>
+    <div class="container">
+      isTop
+    </div>
   </div>
 </template>
 
 <script>
 import Group from 'vux/src/components/group'
 import Cell from 'vux/src/components/cell'
+import TopBar from '../components/TopBar'
 
 export default {
   beforeCreate(){
@@ -14,7 +26,13 @@ export default {
   },
   components: {
     Group,
-    Cell
+    Cell,
+    TopBar
+  },
+  computed:{
+    isTop(){      
+      return this.$store.state.isTop;
+    }
   },
   methods: {
     update(){

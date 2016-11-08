@@ -43,9 +43,15 @@ export default {
       }
     },
     {
-      path: '/reg',
+      path: '/register',
         component(resolve){
         require(['../views/register'],resolve);
+      }
+    },
+    {
+      path: '/webservice',
+        component(resolve){
+        require(['../views/webservice'],resolve);
       }
     },
     {

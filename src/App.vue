@@ -1,16 +1,7 @@
 <template>
   <div id="app">
     <div class="wrapper">
-      <top-bar
-      leftPath="/login"
-      title="首页"
-      leftlabel="登录"
-      rightlabel="充值"
-      rightPath="/"
-      v-if="isTop"></top-bar>
-      <div class="view-container">
-        <router-view></router-view>
-      </div>
+      <router-view class="view-container"></router-view>
       <tab-bar v-if="isTab"></tab-bar>
     </div>
   </div>
@@ -19,17 +10,13 @@
 <script>
 import 'font-awesome/css/font-awesome.min.css'
 import TabBar from './components/TabBar'
-import TopBar from './components/TopBar'
 
 export default {
   name: 'app',
   components: {
-    TabBar,TopBar
+    TabBar
   },
-  computed:{
-    isTop(){      
-      return this.$store.state.isTop;
-    },
+  computed:{    
     isTab(){
       return this.$store.state.isTab;
     }
@@ -45,7 +32,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   height: 100%;
-  max-width: 600px;
+  max-width: 1024px;
   flex:1;
 }
 
