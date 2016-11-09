@@ -45,7 +45,7 @@
       </div>
     </div>
     <el-dialog title="提示" v-model="showMsg">
-      <span>这是一段信息</span>
+      <span>短信已发送！</span>
       <span slot="footer" class="dialog-footer">
         
         <el-button type="primary" @click.native="showMsg = false">确 定</el-button>
@@ -140,8 +140,7 @@ export default {
   color: #fff;
 }
 .msg-bd{
-  flex:1;
-  padding-left: 0.5rem;
+  padding: 0 0.5rem;
   border-left: 1px solid #ddd;
   display: inline-block;
   height: 0.75rem;
@@ -151,8 +150,8 @@ export default {
     border-radius: 0.25rem;
     border:none;
     height: 0.75rem;
-    width: 80%;
     color: #fff;
+    padding: 0 1rem;
   }
 }
 </style>

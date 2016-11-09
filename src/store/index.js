@@ -3,7 +3,8 @@ export default {
     count: 0,
     iconName:'fa',
     isTop:0,
-    isTab:0
+    isTab:0,
+    isLogin:false
   },
   mutations:{
     changeTop(state,n){
@@ -12,8 +13,12 @@ export default {
     changeTab(state,n){
       state.isTab = n;
     },
+    login(state){
+      state.isLogin = true ;
+    },
     increment(state,n){ 
       n?state.count += n.amount : state.count ++
-    }
+    },
+
   }
 }

@@ -20,7 +20,7 @@
             <input type="password" name="password" placeholder="登录密码">
           </div>
           <div>
-            <button class="submit">登录</button>
+            <button class="submit" @click="login">登录</button>
           </div>
           <div class="reg-bd">
             <router-link to="/register" class="reg-btn">注册</router-link>
@@ -42,6 +42,10 @@ export default {
   },
   methods:{
     back(){
+      this.$router.go(-1);
+    },
+    login(){
+      this.$store.commit('login');
       this.$router.go(-1);
     }
   }

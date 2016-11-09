@@ -95,5 +95,6 @@ export default{
   right: 0;
   top : 0;
   font-size: 0.5rem;
+  text-align: center;
 }
 </style>

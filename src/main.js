@@ -5,6 +5,7 @@ import VueResource from 'vue-resource'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 
+
 import App from './App'
 
 import routeConfig from './router/index'

@@ -31,6 +31,7 @@ export default{
   color: #42b983;
   font-size: .375rem;
   vertical-align: middle;
+  text-align: center;
   &.active{
     color: #00a0e9;
   }
