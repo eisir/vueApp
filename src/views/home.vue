@@ -15,8 +15,6 @@
 </template>
 
 <script>
-import Group from 'vux/src/components/group'
-import Cell from 'vux/src/components/cell'
 import TopBar from '../components/TopBar'
 
 export default {
@@ -25,8 +23,6 @@ export default {
     this.$store.commit('changeTab',1);
   },
   components: {
-    Group,
-    Cell,
     TopBar
   },
   computed:{
@@ -42,5 +38,4 @@ export default {
 </script>
 
 <style>
-/*@import '~vux/dist/vux.css';*/
 </style>

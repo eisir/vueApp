@@ -2,11 +2,16 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-default/index.css'
 
 import App from './App'
 
 import routeConfig from './router/index'
 import storeConfig from './store/index'
+
+Vue.use(ElementUI)
+
 
 Vue.use(VueResource)
 Vue.http.options.root = '/static'

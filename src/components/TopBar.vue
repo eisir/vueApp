@@ -73,6 +73,7 @@ export default{
 .title{
   margin:0;
   font-size: 0.5rem;
+  text-align: center;
 }
 .topLeft{
   position: absolute;
@@ -82,6 +83,7 @@ export default{
   top: 0;
   font-size: 0.5rem;
   color: #fff;
+  text-align: center;
   .icon{
     line-height:1.5rem; 
   }

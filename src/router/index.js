@@ -59,6 +59,12 @@ export default {
         component(resolve){
         require(['../views/login'],resolve);
       }
+    },
+    {
+      path: '/forget',
+        component(resolve){
+        require(['../views/forget'],resolve);
+      }
     },    
     {
       path: '*',
