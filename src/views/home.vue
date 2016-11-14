@@ -9,14 +9,41 @@
       rightPath="/"
       v-if="isTop">
     </top-bar>
+   
     <div class="container">
-      <swiper :list="list" auto></swiper>
+      <!-- banner-swiper -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" v-for="item in list">
+            <img :src="item.img">
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <!-- total data -->
+      <div class="index-number">
+        <nav class="nav-inner">
+          <a href="http://www.qhwwd.com/financial/index.html">
+            <img src="/static/images/index_05.png">
+            <span>平台数据</span>
+          </a>
+          <a href="http://www.qhwwd.com/financial/index.html">
+            <img src="/static/images/index_07.png">
+            <span>安全保障</span>
+          </a>
+          <router-link to="/user">
+            <img src="/static/images/Sign.png">
+            <span>每日签到</span>
+          </router-link>
+        </nav>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import swiper from 'vux/src/components/swiper'
+import Swiper from 'swiper'
 import TopBar from '../components/TopBar'
 
 export default {
@@ -47,9 +74,15 @@ export default {
     this.$store.commit('changeTop',1);
     this.$store.commit('changeTab',1);
   },
+  mounted(){
+    var mySwiper = new Swiper('.swiper-container',{
+      autoplay: 5000,//可选选项，自动滑动
+      loop : true, // 循环
+      pagination : '.swiper-pagination'
+    });
+  },
   components: {
-    TopBar,
-    swiper
+    TopBar
   },
   computed:{
     isTop(){      
@@ -66,6 +99,46 @@ export default {
 }
 </script>
 
-<style>
-@import '~vux/dist/vux.css';
+<style lang="scss" scoped>
+@import '~swiper/dist/css/swiper.css';
+.container{
+  width: 100%;
+  margin: 0;
+  background: #f5f5f5;
+}
+.swiper-container{
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.swiper-slide{
+  text-align: center;
+  font-size: 0;
+}
+.swiper-slide img{
+  width: 100%;
+}
+
+.nav-inner{
+  display: flex;
+  flex-direction: row;
+  padding: 0.25rem 0;
+  background: #fff;
+  a{
+    display: block;
+    flex:1;
+    line-height: 0.5rem;
+    border-right: 1px solid #ddd;
+    text-align: center;
+    color: #999;
+    font-size: 0.4375rem;
+    img{
+      width: 0.625rem;
+      vertical-align: middle;
+    }
+    &:last-child{
+      border:none;
+    }
+  }
+}
 </style>
