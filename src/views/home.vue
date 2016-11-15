@@ -112,7 +112,6 @@ export default {
 }
 .swiper-container {
     width: 100%;
-    height: 300px;
     margin: 0 auto;
 }
 .swiper-slide>img{
@@ -124,23 +123,23 @@ export default {
   flex-wrap: nowrap;
 }
 .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #fff;
-        
-        /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
 
 
@@ -166,5 +165,4 @@ export default {
     }
   }
 }
->>>>>>> e8b15cb2aec7cf879707e0c0f38abc3d6f7c27c8
 </style>
