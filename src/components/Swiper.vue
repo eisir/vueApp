@@ -1,36 +1,17 @@
 <template>
-  <div>
-    <top-bar
-      :left="isLogin"
-      leftPath="/login"
-      title="首页"
-      leftlabel="登录"
-      rightlabel=""
-      rightPath="/"
-      v-if="isTop">
-    </top-bar>
-    <div class="container">
-      <div class="swiper-container" ref="swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="(item,index) in list">
-            <img :src="item.img">
-            <!-- {{index}} -->
+  <div class="swiper-container" ref="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" v-for="(item,index) in list">
+        <img :src="item.img">
+        <!-- {{index}} -->
 
-          </div>
-        </div>
-      </div> 
+      </div>
     </div>
-  </div>
+  </div> 
 </template>
-
 <script>
 import Swiper from 'swiper/dist/js/swiper.min.js'
-import TopBar from '../components/TopBar'
-
-import "swiper/dist/css/swiper.min.css"
-
-
-export default {
+export default{
   data(){
     return {
       list: [
@@ -54,40 +35,19 @@ export default {
       ]
     }
   },
-  beforeCreate(){
-    this.$store.commit('changeTop',1);
-    this.$store.commit('changeTab',1);
-
-  },
   mounted(){
     var swiper=new Swiper('.swiper-container');
   },
-  components: {
-    TopBar
-  },
-  computed:{
-    isTop(){      
-      return this.$store.state.isTop;
-    },
-    isLogin(){
-      return !this.$store.state.isLogin;
-    }
-  },
-  methods: {
-    update(){
-    }
-  }
 }
-
 </script>
-
-<style scoped>
+<style>
 .container{
   display: block;
   width: 100%;
   position: relative;
 }
 .swiper-container {
+  flex: 1;
     width: 100%;
     height: 300px;
     /*margin: 20px auto;*/
