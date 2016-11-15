@@ -24,6 +24,7 @@ export default {
 }
 </script>
 <style lang="scss">
+@import '~vux/dist/vux.css';
 @import './assets/scss/layout.scss';
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
