@@ -14,7 +14,7 @@
       <!-- banner-swiper -->
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="item in list">
+          <div class="swiper-slide" v-for="item in bannerList">
             <img :src="item.img">
           </div>
         </div>
@@ -38,6 +38,39 @@
           </router-link>
         </nav>
       </div>
+
+      <!-- recommend -->
+      <div class="index-card">
+        <div class="card-head">
+          {{ recommendData.name }}
+        </div>
+        <div class="card-content">
+          <div class="profit">
+            <h3>
+              {{ recommendData.profit * 100 }}
+              <span>%</span>
+            </h3>
+            <p class="tip">预期年化收益</p>
+          </div>    
+          <div class="sub-title">即投即计息</div>
+          <div class="data">
+            <div class="item">
+              <p>{{ recommendData.time }}</p>
+              <span>项目期限</span>
+            </div>
+            <div class="item">
+              <p>{{ recommendData.getTotal }}元</p>
+              <span>融资金额</span>
+            </div>
+            <div class="item">
+              <p>{{ recommendData.remain }}元</p>
+              <span>剩余可投</span>
+            </div>
+          </div>
+          <div class="submit-btn">立即投标</div>
+          <div class="tip">风险准备金为投资保驾护航</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -49,7 +82,7 @@ import TopBar from '../components/TopBar'
 export default {
   data(){
     return {
-      list: [
+      bannerList: [
         {
           url: '/01',
           img: '/static/images/banner01.jpg',
@@ -67,8 +100,15 @@ export default {
           img: '/static/images/banner04.jpg',
           title: '播下茶籽，明春可发芽？'
         }
-      ]
-    }
+      ],
+      recommendData: {
+        name: "酒商贷20161115002",
+        profit: 0.142,
+        time: "60天",
+        getTotal: "194850",
+        remain: "65364"
+      }
+    }    
   },
   beforeCreate(){
     this.$store.commit('changeTop',1);
@@ -162,6 +202,62 @@ export default {
     }
     &:last-child{
       border:none;
+    }
+  }
+}
+
+.index-card{
+  margin: 0.25rem 0;
+  background-color: #fff;
+  .card-head{
+    text-align: center;
+    line-height: 1.75rem;
+    border-bottom: 1px solid #ddd;
+  }
+  .card-content{
+    text-align: center;
+    padding: 0.5rem 0;
+    .sub-title{
+      color:#ff7301;
+      margin: 0 auto;
+      width: 3rem;
+      border: 1px solid #ff7301;
+      font-size: 0.125rem;
+      border-radius:1rem;
+      line-height: 0.75rem;
+    }
+    h3{
+      font-size: 1.5rem;
+      font-weight: normal;
+      color: #ff7301;
+      >span{
+        font-size: .75rem;
+      }
+    }
+    .tip{
+      color: #999;
+      font-size: 0.5rem;
+    }
+    .data{
+      display: flex;
+      flex-direction: row;
+      margin: 0.5rem 0;
+      .item{
+        flex:1;
+        text-align: center;
+        span{
+          color: #999;
+        }
+      }
+    }
+    .submit-btn{
+      margin: 0 1rem;
+      background-color: #1a98ff;
+      border-radius: 0.25rem;
+      line-height: 1.5rem;
+      color: #fff;
+      font-weight: bold;
+      font-size: 0.75rem;
     }
   }
 }

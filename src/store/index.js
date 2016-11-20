@@ -2,8 +2,8 @@ export default {
   state: {
     count: 0,
     iconName:'fa',
-    isTop:0,
-    isTab:0,
+    isTop:1,
+    isTab:1,
     isLogin:false
   },
   mutations:{

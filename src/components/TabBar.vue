@@ -65,6 +65,6 @@ export default{
   border-top: 1px solid #ddd;
   background-color: #fff;
   z-index: 10;
-  @include prefix((box-shadow: 0 0 10px 0 rgba(155,143,143,0.6)));
+  @include prefix((box-shadow: 0 0 2px 0 rgba(155,143,143,0.6)));
 }
 </style>
